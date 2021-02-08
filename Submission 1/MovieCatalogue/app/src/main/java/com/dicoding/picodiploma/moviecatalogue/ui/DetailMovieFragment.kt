@@ -88,7 +88,7 @@ class DetailMovieFragment : Fragment() {
             tagLineData = movieEntity.tagLine.toString()
             tvItemTagLineReceived.text = tagLineData
             scoreData = movieEntity.score.toString()
-            tvItemScoreReceived.text = StringBuilder("$scoreData%")
+            tvItemScoreReceived.text = "$scoreData%"
             releaseData = movieEntity.release.toString()
             tvItemReleaseReceived.text = releaseData
             durationData = movieEntity.duration.toString()
