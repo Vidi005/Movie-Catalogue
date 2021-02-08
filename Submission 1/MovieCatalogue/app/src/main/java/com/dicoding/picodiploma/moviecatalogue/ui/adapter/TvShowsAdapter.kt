@@ -17,7 +17,7 @@ class TvShowsAdapter() : RecyclerView.Adapter<TvShowsAdapter.TVShowsViewHolder>(
     private val listTVShows = ArrayList<TVShowEntity>()
 
     fun setTVShows(tvShowsItem: ArrayList<TVShowEntity>?) {
-        if (tvShowsItem == null) return
+        if (tvShowsItem.isNullOrEmpty()) return
         this.listTVShows.clear()
         this.listTVShows.addAll(tvShowsItem)
         notifyDataSetChanged()
