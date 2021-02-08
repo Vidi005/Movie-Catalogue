@@ -29,7 +29,7 @@
                 android:src="@drawable/ic_poster"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:siRadius="4dp" />
+                app:siRadius="8dp" />
 
             <TextView
                 android:id="@+id/tv_item_movie_name_received"
