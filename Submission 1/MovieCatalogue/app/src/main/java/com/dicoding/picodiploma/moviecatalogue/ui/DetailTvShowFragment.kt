@@ -1,6 +1,5 @@
 package com.dicoding.picodiploma.moviecatalogue.ui
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
@@ -78,7 +77,6 @@ class DetailTvShowFragment : Fragment() {
         }
     }
 
-    @SuppressLint("SetTextI18n")
     private fun populateDetailTvShow(tvShowEntity: TVShowEntity) {
         fragmentDetailTvShowBinding.apply {
             tvShowNameData = tvShowEntity.tvShowName.toString()
@@ -90,7 +88,7 @@ class DetailTvShowFragment : Fragment() {
             tagLineData = tvShowEntity.tagLine.toString()
             tvItemTagLineReceived.text = tagLineData
             scoreData = tvShowEntity.score.toString()
-            tvItemScoreReceived.text = "$scoreData%"
+            tvItemScoreReceived.text = StringBuilder("$scoreData%")
             durationData = tvShowEntity.duration.toString()
             tvItemDurationReceived.text = durationData
             overviewData = tvShowEntity.overview.toString()
