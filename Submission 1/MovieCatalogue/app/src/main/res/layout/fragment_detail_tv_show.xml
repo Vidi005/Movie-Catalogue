@@ -25,7 +25,7 @@
                 android:id="@+id/riv_item_poster_received"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:siRadius="4dp"
+                app:siRadius="8dp"
                 android:layout_width="180dp"
                 android:layout_height="280dp"
                 android:src="@drawable/ic_poster" />
