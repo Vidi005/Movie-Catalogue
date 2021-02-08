@@ -1,11 +1,10 @@
 package com.dicoding.picodiploma.moviecatalogue.ui
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
-import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -78,7 +77,6 @@ class DetailMovieFragment : Fragment() {
         }
     }
 
-    @SuppressLint("SetTextI18n")
     private fun populateDetailMovie(movieEntity: MovieEntity) {
         fragmentDetailMovieBinding.apply {
             movieNameData = movieEntity.movieName.toString()
@@ -90,7 +88,7 @@ class DetailMovieFragment : Fragment() {
             tagLineData = movieEntity.tagLine.toString()
             tvItemTagLineReceived.text = tagLineData
             scoreData = movieEntity.score.toString()
-            tvItemScoreReceived.text = "$scoreData%"
+            tvItemScoreReceived.text = StringBuilder("$scoreData%")
             releaseData = movieEntity.release.toString()
             tvItemReleaseReceived.text = releaseData
             durationData = movieEntity.duration.toString()
