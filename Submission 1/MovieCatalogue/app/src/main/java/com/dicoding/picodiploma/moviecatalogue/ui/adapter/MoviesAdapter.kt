@@ -17,7 +17,7 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.MoviesViewHolder>() {
     private val listMovies = ArrayList<MovieEntity>()
 
     fun setMovies(moviesItem: ArrayList<MovieEntity>?) {
-        if (moviesItem == null) return
+        if (moviesItem.isNullOrEmpty()) return
         this.listMovies.clear()
         this.listMovies.addAll(moviesItem)
         notifyDataSetChanged()
