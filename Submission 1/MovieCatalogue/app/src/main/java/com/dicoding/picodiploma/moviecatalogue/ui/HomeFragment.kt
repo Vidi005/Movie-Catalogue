@@ -35,7 +35,6 @@ class HomeFragment : Fragment() {
             viewPager.adapter = sectionsPagerAdapter
             tabLayout.setupWithViewPager(fragmentHomeBinding.viewPager)
         }
-        requireActivity().actionBar?.elevation = 0f
     }
 
     private fun setActionBar() {
