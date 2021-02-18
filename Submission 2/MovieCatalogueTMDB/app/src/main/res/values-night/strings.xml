@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_movies">Movies</string>
+    <string name="tab_tv_shows">TV Shows</string>
+    <string name="movie_catalogues">MOVIE CATALOGUES</string>
+    <string name="overview">Overview</string>
+    <string name="release_date">Release Date</string>
+    <string name="share">Share</string>
+    <string name="tv_show_name">TV Show Name</string>
+    <string name="year">Year</string>
+    <string name="year_icon">Year Icon</string>
+    <string name="genres">Genres :</string>
+    <string name="genres_item">Genres</string>
+    <string name="tag_line">Tag line</string>
+    <string name="user_score">User Score</string>
+    <string name="score_item">Score</string>
+    <string name="release_date_item">Date</string>
+    <string name="popularity">Popularity</string>
+    <string name="popularity_item">Popularity</string>
+    <string name="overview_title">Overview</string>
+    <string name="production_companies_title">Production Companies</string>
+    <string name="production_companies">Production Companies</string>
+    <string name="app_title">Movies Catalogues</string>
+    <string name="movie_title">Movie Title</string>
+    <string name="genre">Genre</string>
+    <string name="share_movie_title">Share Using:</string>
+    <string name="detail_movie_title">Detail Movie</string>
+    <string name="detail_tv_show_title">Detail TV Show</string>
+    <string name="first_air_date">First Air Date</string>
+    <string name="item_not_available">Item not available</string>
+    <string name="poster_base_url">http://image.tmdb.org/t/p/w300</string>
+    <string name="link">Link</string>
+    <string name="movie_base_url">https://www.themoviedb.org/movie/</string>
+    <string name="tv_show_base_url">https://www.themoviedb.org/tv/</string>
+</resources>
