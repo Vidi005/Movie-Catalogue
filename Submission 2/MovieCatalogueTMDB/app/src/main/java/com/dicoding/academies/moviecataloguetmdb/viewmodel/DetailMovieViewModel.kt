@@ -8,7 +8,7 @@ import com.dicoding.academies.moviecataloguetmdb.data.source.local.entity.Detail
 class DetailMovieViewModel(private val movieCatalogueRepository: MovieCatalogueRepository) :
     ViewModel() {
 
-    private var movieId: Int? = null
+    private var movieId: Int? = 0
 
     fun setSelectedMovie(movieId: Int) {
         this.movieId = movieId
