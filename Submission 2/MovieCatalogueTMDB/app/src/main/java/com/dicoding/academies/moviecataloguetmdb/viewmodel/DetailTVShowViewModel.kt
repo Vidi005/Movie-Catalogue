@@ -8,7 +8,7 @@ import com.dicoding.academies.moviecataloguetmdb.data.source.local.entity.Detail
 class DetailTVShowViewModel(private val movieCatalogueDataSource: MovieCatalogueDataSource) :
     ViewModel() {
 
-    private var tvId: Int? = null
+    private var tvId: Int? = 0
 
     fun setSelectedTVShow(tvId: Int) {
         this.tvId = tvId
