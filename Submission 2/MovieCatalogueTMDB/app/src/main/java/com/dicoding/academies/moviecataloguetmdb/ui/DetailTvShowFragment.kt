@@ -20,15 +20,15 @@ class DetailTvShowFragment : Fragment() {
         const val EXTRA_TV_SHOW_ID = "extra_tv_show_id"
     }
     private lateinit var fragmentDetailTvShowBinding: FragmentDetailTvShowBinding
-    private var tvId: Int? = null
-    private lateinit var nameData: String
-    private lateinit var firstAirDateData: String
-    private lateinit var genresData: String
-    private lateinit var tagLineData: String
-    private lateinit var scoreData: String
-    private lateinit var popularityData: String
-    private lateinit var overviewData: String
-    private lateinit var productionCompaniesData: String
+    private var tvId: Int? = 0
+    private var nameData = ""
+    private var firstAirDateData = ""
+    private var genresData = ""
+    private var tagLineData = ""
+    private var scoreData = ""
+    private var popularityData = ""
+    private var overviewData = ""
+    private var productionCompaniesData = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -58,7 +58,7 @@ class DetailTvShowFragment : Fragment() {
     }
 
     private fun setActionBar() {
-        (activity as AppCompatActivity?)?.supportActionBar?.apply {
+        (activity as? AppCompatActivity?)?.supportActionBar?.apply {
             setHomeButtonEnabled(true)
             setDisplayHomeAsUpEnabled(true)
             title = getString(R.string.detail_tv_show_title)
