@@ -20,16 +20,16 @@ class DetailMovieFragment : Fragment() {
         const val EXTRA_MOVIE_ID = "extra_movie_id"
     }
     private lateinit var fragmentDetailMovieBinding: FragmentDetailMovieBinding
-    private var movieId: Int? = null
-    private lateinit var titleData: String
-    private lateinit var yearData: String
-    private lateinit var genresData: String
-    private lateinit var tagLineData: String
-    private lateinit var scoreData: String
-    private lateinit var releaseDateData: String
-    private lateinit var popularityData: String
-    private lateinit var overviewData: String
-    private lateinit var productionCompaniesData: String
+    private var movieId: Int? = 0
+    private var titleData = ""
+    private var yearData = ""
+    private var genresData = ""
+    private var tagLineData = ""
+    private var scoreData = ""
+    private var releaseDateData = ""
+    private var popularityData = ""
+    private var overviewData = ""
+    private var productionCompaniesData = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -59,7 +59,7 @@ class DetailMovieFragment : Fragment() {
     }
 
     private fun setActionBar() {
-        (activity as AppCompatActivity?)?.supportActionBar?.apply {
+        (activity as? AppCompatActivity?)?.supportActionBar?.apply {
             setHomeButtonEnabled(true)
             setDisplayHomeAsUpEnabled(true)
             title = getString(R.string.detail_movie_title)
