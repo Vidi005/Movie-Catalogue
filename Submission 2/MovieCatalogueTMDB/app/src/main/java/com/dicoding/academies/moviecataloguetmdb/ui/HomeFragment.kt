@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
         val bitmap = drawable?.toBitmap()
         val scaledDrawable = BitmapDrawable(resources,
             bitmap?.let { Bitmap.createScaledBitmap(it, 60, 60, true) })
-        (activity as AppCompatActivity?)?.supportActionBar?.apply {
+        (activity as? AppCompatActivity?)?.supportActionBar?.apply {
             setHomeAsUpIndicator(scaledDrawable)
             setHomeButtonEnabled(true)
             setDisplayHomeAsUpEnabled(true)
