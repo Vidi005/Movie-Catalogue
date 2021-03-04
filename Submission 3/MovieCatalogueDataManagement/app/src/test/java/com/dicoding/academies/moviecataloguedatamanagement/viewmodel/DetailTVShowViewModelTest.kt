@@ -14,8 +14,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito.`when`
-import org.mockito.Mockito.verify
+import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
@@ -50,5 +49,18 @@ class DetailTVShowViewModelTest {
         viewModel.detailTvShow.observeForever(detailTvShowObserver)
         assertNotNull(dummyDetailTvShow.data)
         verify(detailTvShowObserver).onChanged(dummyDetailTvShow)
+    }
+
+    @Test
+    fun setFavoriteTvShow() {
+        val dummyDetailTvShow = Resource.success(dummyDetailTvShow)
+        val detailTvShow = MutableLiveData<Resource<TVShowEntity>>()
+        detailTvShow.value = dummyDetailTvShow
+        viewModel.detailTvShow = detailTvShow
+        doNothing().`when`(movieCatalogueRepository)
+            .setFavoriteTVShow(dummyDetailTvShow.data as TVShowEntity, true)
+        viewModel.setFavoriteTvShow()
+        detailTvShow.value?.data
+            ?.let { verify(movieCatalogueRepository).setFavoriteTVShow(it, true) }
     }
 }
