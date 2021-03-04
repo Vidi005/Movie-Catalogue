@@ -35,7 +35,9 @@ class MovieCatalogueRepository private constructor(
             localData: LocalDataSource,
             appExecutors: AppExecutors): MovieCatalogueRepository =
                 instance ?: synchronized(this) {
-                    instance ?: MovieCatalogueRepository(remoteData, localData, appExecutors)
+                    MovieCatalogueRepository(remoteData, localData, appExecutors).apply {
+                        instance = this
+                    }
                 }
     }
 
@@ -183,13 +185,11 @@ class MovieCatalogueRepository private constructor(
         }.asLiveData()
     }
 
-    override fun setFavoriteMovie(movie: MovieEntity, state: Boolean) {
+    override fun setFavoriteMovie(movie: MovieEntity, state: Boolean) =
         appExecutors.diskIO().execute { localDataSource.setMovieFavorite(movie, state) }
-    }
 
-    override fun setFavoriteTVShow(tvShow: TVShowEntity, state: Boolean) {
+    override fun setFavoriteTVShow(tvShow: TVShowEntity, state: Boolean) =
         appExecutors.diskIO().execute { localDataSource.setTVShowFavorite(tvShow, state) }
-    }
 
     override fun getFavoredMovies(sort: String): LiveData<PagedList<MovieEntity>> {
         val config = PagedList.Config.Builder()
