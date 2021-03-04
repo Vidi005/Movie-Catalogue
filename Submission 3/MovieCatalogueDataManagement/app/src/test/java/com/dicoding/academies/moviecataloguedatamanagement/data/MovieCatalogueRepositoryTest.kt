@@ -43,9 +43,9 @@ class MovieCatalogueRepositoryTest {
     private val movieResponses = generateRemoteDummyMoviesItem()
     private val movieId = movieResponses[0].id
     private val tvShowResponses = generateRemoteDummyTVShowsItem()
-    private val tvId = tvShowResponses[0].id
+    private val tvId = tvShowResponses[2].id
     private val detailMovieResponse = generateRemoteDummyDetailMovie(movieId)[0]
-    private val detailTvShowResponse = generateRemoteDummyDetailTVShow(tvId)[0]
+    private val detailTvShowResponse = generateRemoteDummyDetailTVShow(tvId)[2]
 
     @Test
     @Suppress("UNCHECKED_CAST")
@@ -123,9 +123,16 @@ class MovieCatalogueRepositoryTest {
     }
 
     @Test
+    fun setFavoriteMovie() {
+        movieCatalogueRepository.setFavoriteMovie(generateDummyDetailMovie(movieId)[0], true)
+        verify(local).setMovieFavorite(generateDummyDetailMovie(movieId)[0], true)
+        verifyNoMoreInteractions(local)
+    }
+
+    @Test
     fun getDetailTVShow() {
         val dummyTvShowEntity = MutableLiveData<TVShowEntity>()
-        dummyTvShowEntity.value = generateDummyDetailTVShow(tvId)[0]
+        dummyTvShowEntity.value = generateDummyDetailTVShow(tvId)[2]
         `when`(local.getDetailTVShow(tvId)).thenReturn(dummyTvShowEntity)
         val detailTVShowEntity = getValue(movieCatalogueRepository.getDetailTVShow(tvId))
         verify(local).getDetailTVShow(tvId)
@@ -144,5 +151,12 @@ class MovieCatalogueRepositoryTest {
         assertEquals(
             tvShowProductionCompanyListToStringConverter(detailTvShowResponse),
                 detailTVShowEntity.data?.productionCompanies)
+    }
+
+    @Test
+    fun setFavoriteTvShow() {
+        movieCatalogueRepository.setFavoriteTVShow(generateDummyDetailTVShow(tvId)[2], true)
+        verify(local).setTVShowFavorite(generateDummyDetailTVShow(tvId)[2], true)
+        verifyNoMoreInteractions(local)
     }
 }
