@@ -156,7 +156,7 @@ class FavoriteTvShowsFragment : Fragment(), OnFavoriteTVShowItemClickCallback {
                 groupEmptyItemFav.visibility = View.GONE
                 tvTvShowItemsSize.apply {
                     text = StringBuilder(
-                    "${getString(R.string.favored_movie_items)}${favoriteTvShowItems.lastIndex + 1}")
+                    "${getString(R.string.favored_tv_show_items)}${favoriteTvShowItems.lastIndex + 1}")
                     visibility = View.VISIBLE
                 }
             }
