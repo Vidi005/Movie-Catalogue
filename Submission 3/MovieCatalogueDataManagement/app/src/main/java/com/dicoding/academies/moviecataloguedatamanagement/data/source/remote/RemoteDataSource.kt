@@ -27,8 +27,8 @@ class RemoteDataSource {
         private const val API_KEY = BuildConfig.TMDB_API_KEY
         private const val LANGUAGE_QUERY = "en-US"
         private const val SORT_QUERY = "popularity.desc"
+        private val TAG = RemoteDataSource::class.java.simpleName
     }
-    private val TAG = RemoteDataSource::class.java.simpleName
 
     fun getMovies(): LiveData<ApiResponse<List<MoviesItemResponse>>> {
         increment()
