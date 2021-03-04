@@ -8,14 +8,13 @@ import com.dicoding.academies.moviecataloguedatamanagement.data.source.local.ent
 import com.dicoding.academies.moviecataloguedatamanagement.utils.DataDummy.generateDummyDetailMovie
 import com.dicoding.academies.moviecataloguedatamanagement.utils.DataDummy.generateDummyMovies
 import com.dicoding.academies.moviecataloguedatamanagement.vo.Resource
-import org.junit.Assert.*
+import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito.`when`
-import org.mockito.Mockito.verify
+import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
@@ -50,5 +49,18 @@ class DetailMovieViewModelTest {
         viewModel.detailMovie.observeForever(detailMovieObserver)
         assertNotNull(dummyDetailMovie.data)
         verify(detailMovieObserver).onChanged(dummyDetailMovie)
+    }
+
+    @Test
+    fun setFavoriteMovie() {
+        val dummyDetailMovie = Resource.success(dummyDetailMovie)
+        val detailMovie = MutableLiveData<Resource<MovieEntity>>()
+        detailMovie.value = dummyDetailMovie
+        viewModel.detailMovie = detailMovie
+        dummyDetailMovie.data
+            ?.let { doNothing().`when`(movieCatalogueRepository).setFavoriteMovie(it, true) }
+        viewModel.setFavoriteMovie()
+        verify(movieCatalogueRepository)
+            .setFavoriteMovie(detailMovie.value?.data as MovieEntity, true)
     }
 }
