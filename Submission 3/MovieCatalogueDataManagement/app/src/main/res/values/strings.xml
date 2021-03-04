@@ -30,13 +30,11 @@
     <string name="detail_tv_show_title">Detail TV Show</string>
     <string name="first_air_date">First Air Date</string>
     <string name="item_not_available">Item not available</string>
-    <string name="poster_base_url">http://image.tmdb.org/t/p/w300</string>
+    <string name="poster_base_url">https://image.tmdb.org/t/p/w300</string>
     <string name="link">Link</string>
     <string name="movie_base_url">https://www.themoviedb.org/movie/</string>
     <string name="tv_show_base_url">https://www.themoviedb.org/tv/</string>
     <string name="favorite">Favorite</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="favored_movies">Favored Movies: 0</string>
     <string name="favored_tv_shows">Favored TV Shows: 0</string>
     <string name="menu_asc">Ascending</string>
@@ -50,4 +48,5 @@
     <string name="loading_failed_alert">Loading Failed!</string>
     <string name="ok_positive_btn">OK</string>
     <string name="favored_movie_items">"Favored Movies: "</string>
+    <string name="favored_tv_show_items">"Favored TV Shows: "</string>
 </resources>
