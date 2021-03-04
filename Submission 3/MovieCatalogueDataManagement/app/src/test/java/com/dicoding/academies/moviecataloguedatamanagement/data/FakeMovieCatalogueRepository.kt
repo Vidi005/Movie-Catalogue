@@ -169,17 +169,15 @@ class FakeMovieCatalogueRepository(
         }.asLiveData()
     }
 
-    override fun setFavoriteMovie(movie: MovieEntity, state: Boolean) {
-        appExecutors.diskIO().execute { localDataSource.setMovieFavorite(movie, state) }
-    }
+    override fun setFavoriteMovie(movie: MovieEntity, state: Boolean) =
+        localDataSource.setMovieFavorite(movie, state)
 
-    override fun setFavoriteTVShow(tvShow: TVShowEntity, state: Boolean) {
-        appExecutors.diskIO().execute { localDataSource.setTVShowFavorite(tvShow, state) }
-    }
+    override fun setFavoriteTVShow(tvShow: TVShowEntity, state: Boolean) =
+        localDataSource.setTVShowFavorite(tvShow, state)
 
     override fun getFavoredMovies(sort: String): LiveData<PagedList<MovieEntity>> {
         val config = PagedList.Config.Builder()
-            .setEnablePlaceholders(false)
+            .setEnablePlaceholders(true)
             .setInitialLoadSizeHint(5)
             .setPageSize(5)
             .build()
@@ -188,7 +186,7 @@ class FakeMovieCatalogueRepository(
 
     override fun getFavoredTVShows(sort: String): LiveData<PagedList<TVShowEntity>> {
         val config = PagedList.Config.Builder()
-            .setEnablePlaceholders(false)
+            .setEnablePlaceholders(true)
             .setInitialLoadSizeHint(5)
             .setPageSize(5)
             .build()
