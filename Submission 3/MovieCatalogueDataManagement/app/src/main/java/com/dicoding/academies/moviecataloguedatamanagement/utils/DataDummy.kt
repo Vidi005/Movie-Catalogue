@@ -239,6 +239,40 @@ object DataDummy {
             8.5,
             "WandaVision",
             "Experience a new vision of reality."))
+        detailTvShow.add(DetailTVShowResponse(
+            listOf(
+                TVShowGenresItemResponse("Mystery"),
+                TVShowGenresItemResponse("Drama"),
+                TVShowGenresItemResponse("Crime")),
+            1280.038,
+            tvId,
+            "2017-01-26",
+            "Set in the present, the series offers a bold, subversive take on Archie, Betty, Veronica and their friends, exploring the surreality of small-town life, the darkness and weirdness bubbling beneath Riverdale’s wholesome facade.",
+            "/wRbjVBdDo5qHAEOVYoMWpM58FSA.jpg",
+            listOf(
+                TVShowProductionCompaniesItemResponse("Warner Bros. Television", "US"),
+                TVShowProductionCompaniesItemResponse("Berlanti Productions", "US")),
+            8.6,
+            "Riverdale",
+            "Small town. Big secrets."))
+        detailTvShow.add(DetailTVShowResponse(
+            listOf(
+                TVShowGenresItemResponse("Action & Adventure"),
+                TVShowGenresItemResponse("Drama"),
+                TVShowGenresItemResponse("Sci-Fi & Fantasy")),
+            1176.389,
+            tvId,
+            "2010-10-31",
+            "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+            "/rqeYMLryjcawh2JeRpCVUDXYM5b.jpg",
+            listOf(
+                TVShowProductionCompaniesItemResponse("AMC Networks", "US"),
+                TVShowProductionCompaniesItemResponse("Circle of Confusion", "US"),
+                TVShowProductionCompaniesItemResponse("Valhalla Motion Pictures", "US"),
+                TVShowProductionCompaniesItemResponse("Darkwoods Productions", "US")),
+            8.0,
+            "The Walking Dead",
+            "Fight the dead. Fear the living."))
         return detailTvShow
     }
 }
